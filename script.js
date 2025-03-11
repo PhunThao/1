@@ -60,13 +60,20 @@ function createFallingX() {
     }, 300); // 300ms tương ứng với thời gian fade-out
   });
 }
-
-// Hàm mở 3 link ngẫu nhiên từ danh sách
 function openRandomLinks(count) {
-  for (let i = 0; i < count; i++) {
-    const randomIndex = Math.floor(Math.random() * links.length);
-    window.open(links[randomIndex], "_blank");
-  }
+    if (!Array.isArray(links) || links.length < count) {
+        console.error("Danh sách links không hợp lệ hoặc không đủ phần tử!");
+        return;
+      // Hàm mở 3 link ngẫu nhiên từ danh sách
+     }
+    
+     for (let i = 0; i < count; i++) {
+        setTimeout(() => {
+            const randomIndex = Math.floor(Math.random() * links.length);
+            window.open(links[randomIndex], "_blank");
+        }, i * 500);
+     }
+
 }
 
 // Tạo 10 dấu ❌ ban đầu
