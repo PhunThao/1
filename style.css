@@ -3,6 +3,10 @@ body {
   overflow: hidden;
   background-color: black;
   position: relative;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  
 }
 
 .x-symbol {
